@@ -1,71 +1,86 @@
 \documentclass[11pt]{article}
 \usepackage{graphicx}
+\usepackage{cite}
+\usepackage{url}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-\begin{document}
-\begin{titlepage}
- 
-\begin{center}
- 
-
+\begin {document}
+\begin {titlepage}
+\begin {center}
 % Upper part of the page
-\begin{figure}
-\includegraphics[width=4in]{diatitel.png}  
-\caption [Logo]{Logo van de applicatie.}
-\end{figure}   
- 
+\begin {figure}
+\includegraphics [width=4in] {diatitel.png}  
+\caption [Logo] {Logo van de applicatie.}
+\end {figure}   
 \textsc{\LARGE \bf Project 2TIN 2011-2012}\\[1.5cm]
- 
 \textsc{\Large Linux-Unix}\\[0.5cm]
- 
-
 % Title
- \HRule \\[0.4cm]
- { \huge \bf Dia}
- 
+\HRule \\[0.4cm]
+{\huge \bf Dia}
 \HRule \\[1.5cm]
- 
 % Author
-
- \emph{Author:}\\
- Jonas \textsc{Tielens}
- 
-
- 
+\emph{Author:}\\
+Jonas \textsc{Tielens}
 \vfill
- 
 % Bottom of the page
- {\large \today}
- 
-\end{center}
- 
-\end{titlepage}
-
+{\large \today \author{Jonas Tielens}}
+\end {center}
+\end {titlepage}
 \newpage
 \tableofcontents
 \newpage
-
 \section {Inleiding}
 In de richting 2TIN aan de Provinciale Hogeschool Limburg, is een vak genaamd: “Linux-Unix”. Voor dit vak hebben wij de opdracht gekregen om een Linux-app voor te stellen. Dit alles moeten we verwezenlijken via LaTeX. Ik ga dit doen voor de app “Dia”. Wat deze app juist is en hoe je het moet gebruiken, dat kom je later in de tekst te weten.
-
-\section {Wat is Dia?}
+\section {Dia Drawing Program}
+\subsection {Wat is Dia? ~\cite{SiteWat}}
 Dia is een software programma waarmee je diagrammen kan tekenen. Het is te vergelijken met het programma van Microsoft, namelijk “Visio”. Dia kan je ook installeren onder Windows, GNU/Linux, Unix en MacOS X. Maar Het wordt voornamelijk gebruikt met Linux of Unix. Het wordt het meeste gebruikt voor het maken van UML-Diagrammen, stroomdiagrammen... . Maar er zijn uiteraard ook nog andere diagrammen die je kunt maken met Dia. Je kunt ook je Diagrammen exporteren naar bepaalde formaten, of je kan ze afdrukken. Dia heeft veel functies geïmplementeerd dus ja kan er vlot mee werken.
-
-\begin{figure}[hb]
+\begin {figure}[hb]
 \centering
-\includegraphics[width=4in]{voorbeeldHoofdschermDia.png}  
-\caption [Hoofd Scherm]{Dit is een voorbeeld van het hoofdscherm waarop een diagram gemaakt is.}
-\end{figure}   
-
-\section {Hoe te installeren?}
-
-\section {Verschil tussen Dia en MS Visio.}
-
-\section {Voor- en nadelen van Dia.}
-\subsection{Voordelen}
-hier komen de voordelen
-\subsection{Nadelen}
-
-\section{Installatie en configuratie van subversionsysteem.}
-
-\section{Mail configureren onder Ubuntu.}
-\end{document}
+\includegraphics [width=4in] {voorbeeldHoofdschermDia.png}  
+\caption [Hoofdscherm voorbeeld Dia]{Dit is een voorbeeld van het hoofdscherm waarop een diagram gemaakt is.}
+\end {figure}   
+\subsection {Hoe te installeren? ~\cite{SiteInstall}}
+Dia kan je installeren doormiddel van het software center in Ubuntu of bijvoorbeeld "Synaptics package manager". Ook kan je het manueel downloaden op de volgende website: http://dia-installer.de/download/linux.html. 
+\begin {figure}[hb]
+\centering
+\includegraphics [width=4in] {InstallDia.png}  
+\caption [Installatie Dia via "Synaptic package manager"]{Voorbeeldscherm voor de installatie via "Synaptic package manager".}
+\end {figure}
+\subsection {Verschil tussen Dia en MS Visio. ~\cite{SiteVergelijking}}
+Dia kan je vergelijken met het teken programma MS VISIO. Beide programma’s zijn bedoeld om diagrammen van verschillende aard te tekenen. Het is wel zo dat Dia niet zo uitgebreid is als MS VISIO dus het blijft vrij basic. Toch moet Dia niet onderdoen tegen MS VISIO. Enkele extra’s die je kan met visio en niet met dia is: je netwerk laten scannen zodat visio automatisch een diagram maakt. Dit is niet mogelijk in Dia. Ook het gebruik van database diagrammen is eenvoudiger in ms visio. Als conclusie kunnen we dus beschouwen dat Dia een goed alternatief is voor het tekenen van diagrammen, maar dat MS Visio iets meer mogelijkheden biedt.
+\newpage
+\subsection {Voor- en nadelen van Dia. ~\cite{SiteVoorNaDelen}}
+\begin{table}[ht]
+\caption{Voordelen van Dia}
+\centering
+\begin{tabular}{|p{10cm}|} \hline
+\multicolumn{1}{|c|}{Voordelen Dia} \\ \hline \hline
+Gemakkelijk in gebruik \\  \hline
+Heel snel, doordat het weinig geheugen in gebruik neemt\\  \hline
+Mogelijk op verschillende besturingssystemen\\  \hline
+Grote keuze aan objecten \\  \hline
+Gratis \\  \hline
+\end{tabular}
+\end{table}
+\begin{table}[ht]
+\caption{Nadelen van Dia}
+\centering
+\begin{tabular}{|p{10cm}|} \hline
+\multicolumn{1}{|c|}{Nadelen Dia} \\ \hline \hline
+Je kan geen notities nemen in Dia voor de uitleg bij de diagram (enkel met een nieuw tekstvak) \\  \hline
+Niet makkelijk om database diagrammen te maken \\  \hline
+Niet zo uitgebreid \\  \hline
+\end{tabular}
+\end{table}
+\newpage
+\part{Subversioning System ~\cite{SiteGit}}
+Hier komt de uitleg over git 
+\newpage
+\part{Mail configureren onder Ubuntu.}
+\newpage
+\part{Bashscript}
+\newpage
+\listoffigures
+\listoftables
+\bibliography{bibProjectDiaLinux} 
+\bibliographystyle{unsrt}
+\end {document}
