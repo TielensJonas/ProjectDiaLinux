@@ -1,16 +1,20 @@
-\documentclass[11pt]{article}
+\documentclass[11pt]{report}
 \usepackage{graphicx}
+\usepackage{color}
 \usepackage{cite}
 \usepackage{url}
+\usepackage{listings}
+\lstset{rulecolor=\color{red}}
+\author{Jonas Tielens}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-\begin {document}
-\begin {titlepage}
-\begin {center}
+\begin{document}
+\begin{titlepage}
+\begin{center}
 % Upper part of the page
-\begin {figure}
+\begin{figure}
 \includegraphics [width=4in] {diatitel.png}  
 \caption [Logo] {Logo van de applicatie.}
-\end {figure}   
+\end{figure}   
 \textsc{\LARGE \bf Project 2TIN 2011-2012}\\[1.5cm]
 \textsc{\Large Linux-Unix}\\[0.5cm]
 % Title
@@ -23,33 +27,38 @@ Jonas \textsc{Tielens}
 \vfill
 % Bottom of the page
 {\large \today \author{Jonas Tielens}}
-\end {center}
-\end {titlepage}
+\end{center}
+\end{titlepage}
 \newpage
 \tableofcontents
 \newpage
-\section {Inleiding}
+\chapter{Eigen onderwerp applicatie-Linux}
+\section{Inleiding}
+\paragraph{•}
 In de richting 2TIN aan de Provinciale Hogeschool Limburg, is een vak genaamd: “Linux-Unix”. Voor dit vak hebben wij de opdracht gekregen om een Linux-app voor te stellen. Dit alles moeten we verwezenlijken via LaTeX. Ik ga dit doen voor de app “Dia”. Wat deze app juist is en hoe je het moet gebruiken, dat kom je later in de tekst te weten.
-\section {Dia Drawing Program}
-\subsection {Wat is Dia? ~\cite{SiteWat}}
+\section{Dia Drawing Program}
+\subsection{Wat is Dia?~\cite{SiteWat}}
+\paragraph{•}
 Dia is een software programma waarmee je diagrammen kan tekenen. Het is te vergelijken met het programma van Microsoft, namelijk “Visio”. Dia kan je ook installeren onder Windows, GNU/Linux, Unix en MacOS X. Maar Het wordt voornamelijk gebruikt met Linux of Unix. Het wordt het meeste gebruikt voor het maken van UML-Diagrammen, stroomdiagrammen... . Maar er zijn uiteraard ook nog andere diagrammen die je kunt maken met Dia. Je kunt ook je Diagrammen exporteren naar bepaalde formaten, of je kan ze afdrukken. Dia heeft veel functies geïmplementeerd dus ja kan er vlot mee werken.
-\begin {figure}[hb]
+\begin{figure}[h!]
 \centering
 \includegraphics [width=4in] {voorbeeldHoofdschermDia.png}  
 \caption [Hoofdscherm voorbeeld Dia]{Dit is een voorbeeld van het hoofdscherm waarop een diagram gemaakt is.}
-\end {figure}   
-\subsection {Hoe te installeren? ~\cite{SiteInstall}}
-Dia kan je installeren doormiddel van het software center in Ubuntu of bijvoorbeeld "Synaptics package manager". Ook kan je het manueel downloaden op de volgende website: http://dia-installer.de/download/linux.html. 
-\begin {figure}[hb]
+\end{figure}   
+\subsection{Hoe te installeren?}
+\paragraph{•}
+Dia kan je installeren doormiddel van het software center in Ubuntu of bijvoorbeeld "Synaptics package manager". Ook kan je het manueel downloaden op de volgende website van dia-installer. 
+\begin{figure}[h!]
 \centering
 \includegraphics [width=4in] {InstallDia.png}  
 \caption [Installatie Dia via "Synaptic package manager"]{Voorbeeldscherm voor de installatie via "Synaptic package manager".}
-\end {figure}
-\subsection {Verschil tussen Dia en MS Visio. ~\cite{SiteVergelijking}}
+\end{figure}
+\subsection{Verschil tussen Dia en MS Visio.}
+\paragraph{•}
 Dia kan je vergelijken met het teken programma MS VISIO. Beide programma’s zijn bedoeld om diagrammen van verschillende aard te tekenen. Het is wel zo dat Dia niet zo uitgebreid is als MS VISIO dus het blijft vrij basic. Toch moet Dia niet onderdoen tegen MS VISIO. Enkele extra’s die je kan met visio en niet met dia is: je netwerk laten scannen zodat visio automatisch een diagram maakt. Dit is niet mogelijk in Dia. Ook het gebruik van database diagrammen is eenvoudiger in ms visio. Als conclusie kunnen we dus beschouwen dat Dia een goed alternatief is voor het tekenen van diagrammen, maar dat MS Visio iets meer mogelijkheden biedt.
 \newpage
-\subsection {Voor- en nadelen van Dia. ~\cite{SiteVoorNaDelen}}
-\begin{table}[ht]
+\subsection{Voor- en nadelen van Dia.}
+\begin{table}[h!]
 \caption{Voordelen van Dia}
 \centering
 \begin{tabular}{|p{10cm}|} \hline
@@ -61,7 +70,7 @@ Grote keuze aan objecten \\  \hline
 Gratis \\  \hline
 \end{tabular}
 \end{table}
-\begin{table}[ht]
+\begin{table}[h!]
 \caption{Nadelen van Dia}
 \centering
 \begin{tabular}{|p{10cm}|} \hline
@@ -72,15 +81,76 @@ Niet zo uitgebreid \\  \hline
 \end{tabular}
 \end{table}
 \newpage
-\part{Subversioning System ~\cite{SiteGit}}
-Hier komt de uitleg over git 
+\appendix
+\renewcommand*{\appendixname}{Bijlage}
+\chapter{Subversiebeheersysteem}
+Voor het subversie systeem beheer heb ik de handleiding gevolgd op de website ~\cite{SiteGit}.
+\section{Installatie Git}
+We gaan eerste git installeren op ons systeem.
+In de terminal:
+\begin{lstlisting}
+sudo apt-get install git-core git-gui git-doc
+\end{lstlisting}
+\section{SSH Key aanmaken}
+Hierna gaan we een sshkey aanmaken voor de veiligheid.
+in de treminal:
+\begin{lstlisting}
+ssh-keygen -t rsa -C"jouw email-adres"
+\end{lstlisting}
+Hierna wordt er gevraagd waar je de sshkey wilt opslaan, druk gewoon op "enter". En vul een wachtwoord in als dit gevraagd wordt.
+als dit goed gegaan is krijg je het scherm te zien met de bevestiging van de aanmaak van de key. zie \ref{AfbGitSsh}
+\begin{figure}[h!]
+\centering
+\includegraphics [width=4in] {AfbGitSsh.png}  
+\caption [Succesvol sshkey aangemaakt]{Hier zie je het resultaat na aanmaak van de SSH Key.}
+\label{AfbGitSsh}
+\end{figure} 
+Nu gaan we de SSH key nog toevoegen aan ons profiel.Zie afbeelding \ref{AfbGitSshProfiel}
+\begin{figure}[h!]
+\centering
+\includegraphics [width=4in] {AfbGitSshProfiel.png}  
+\caption [Toevoegpagina voor SSH key op online profiel]{Hier zie je de pagina waar je de SSH key moet toevoegen.}
+\label{AfbGitSshProfiel}
+\end{figure} 
+Nu kunnen we gaan testen of de key juist is aangemaakt.
+In de terminal:
+\begin{lstlisting}
+ssh -T git@github.com
+yes
+\end{lstlisting}
+Als alles goed is zie je dan een korte tekst met de verwelkoming van u als gebruiker.
+\section{Repository aanmaken en bestanden toevoegen}
+Voor de repository aan te maken ga je naar je profiel op de website van GitHub. Hier klikken we op 'New Repository", dan vul je een naam in in dit geval "ProjectDiaLinux" en de repository is aangemaakt.
+Om bestanden toe te voegen in de repository is het nodig dat we de repository ook lokaal op de pc aanmaken. Dit doen we door onderstaande stappen in de Terminal:
+\begin{lstlisting}
+cd ./.ssh/
+cd PojectDiaLinux
+git init
+cd
+git clone git@github.com:TielensJonas/ProjectDiaLinux.git
+cd ProjectDiaLinux
+git remote add upstream git://github.com/TielensJonas/ProjectDiaLinux.git
+\end{lstlisting}
+Nu zou er een map moeten zijn die "ProjectDiaLinux" heet in de ./home/ root. In deze map gaan we nu een nieuw .tex bestand opslaan via TexMaker.
+Als we wat aanpassingen hebben gedaan aan het bestand kunnen we dit gaat toevoegen aan git voor de versie te bewaren. 
+Onderstaande regels moeten worden uitgevoerd voor elke aanpassing die je wilt bewaren:
+\begin{lstlisting}
+cd ProjectDiaLinux
+git add ProjectDiaLinux.tex
+git commit -m 'commentaar bij versie'
+git push master origin
+\end{lstlisting}
+Nu kan je online bij je profiel zien dat er een bestand in de repository zit. Indien je andere bestanden wil toevoegen dien je eerst het bestand in de lokale map te plaatsen en dan de bovenstaande regels code opnieuw uit te voeren.
+Voor eventuele problemen raadpleeg de website ~\cite{SiteGit}.
 \newpage
-\part{Mail configureren onder Ubuntu.}
+\renewcommand{\appendixname}{Bijlage}
+\chapter{Mail configureren onder Ubuntu.}
 \newpage
-\part{Bashscript}
+\renewcommand{\appendixname}{Bijlage}
+\chapter{Bashscript}
 \newpage
 \listoffigures
 \listoftables
 \bibliography{bibProjectDiaLinux} 
 \bibliographystyle{unsrt}
-\end {document}
+\end{document}
