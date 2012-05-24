@@ -1,3 +1,4 @@
+
 \documentclass[11pt]{report}
 \usepackage{graphicx}
 \usepackage{color}
@@ -17,6 +18,7 @@
 \cfoot{\fancyplain{}{Jonas Tielens}}
 \rfoot{\fancyplain{}{\thepage}}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\usepackage{hyperref}
 \begin{document}
 \begin{titlepage}
 \begin{center}
@@ -33,7 +35,7 @@
 \HRule \\[1.5cm]
 % Author
 \emph{Author:}\\
-Jonas \textsc{Tielens}
+Jonas Tielens
 \vfill
 % Bottom of the page
 {\large \today \author{Jonas Tielens}}
@@ -42,20 +44,21 @@ Jonas \textsc{Tielens}
 \newpage
 \tableofcontents
 \newpage
-\chapter{Info applicatie-Linux (Dia)}
-\section{Inleiding}
+\chapter{Inleiding}
 \paragraph{•}
 In de richting 2TIN aan de Provinciale Hogeschool Limburg, is een vak genaamd: “Linux-Unix”. Voor dit vak hebben wij de opdracht gekregen om een Linux-app voor te stellen. Dit alles moeten we verwezenlijken via LaTeX. Ik ga dit doen voor de app “Dia”. Wat deze app juist is en hoe je het moet gebruiken, dat kom je later in de tekst te weten.
+\chapter{Info applicatie-Linux (Dia)}
 \section{Dia Drawing Program}
-\subsection{Wat is Dia?~\cite{SiteWat}}
+\subsection{Wat is Dia?}
 \paragraph{•}
 Dia is een software programma waarmee je diagrammen kan tekenen. Het is te vergelijken met het programma van Microsoft\index{Microsoft}, namelijk “Visio”. Dia\index{Dia} kan je ook installeren onder Windows, GNU/Linux, Unix en MacOS X. Maar Het wordt voornamelijk gebruikt met Linux of Unix. Het wordt het meeste gebruikt voor het maken van UML-Diagrammen, stroomdiagrammen... . Maar er zijn uiteraard ook nog andere diagrammen die je kunt maken met Dia. Je kunt ook je Diagrammen\index{Diagrammen} exporteren naar bepaalde formaten, of je kan ze afdrukken. Dia heeft veel functies geïmplementeerd dus ja kan er vlot mee werken.
-\begin{figure}[h!]
+\begin{figure}[h]
 \centering
 \includegraphics [width=4in] {voorbeeldHoofdschermDia.png}  
 \caption [Hoofdscherm voorbeeld Dia]{Dit is een voorbeeld van het hoofdscherm waarop een diagram gemaakt is.}
 \end{figure}   
-\subsection{Hoe te installeren?~\cite{SiteInstall}}
+\newpage
+\subsection{Hoe te installeren?}
 \paragraph{•}
 Dia kan je installeren doormiddel van het software center in Ubuntu\index{Ubuntu} of bijvoorbeeld "Synaptics package manager". Ook kan je het manueel downloaden op de volgende website van dia-installer. 
 \begin{figure}[h!]
@@ -63,12 +66,13 @@ Dia kan je installeren doormiddel van het software center in Ubuntu\index{Ubuntu
 \includegraphics [width=4in] {InstallDia.png}  
 \caption [Installatie Dia via "Synaptic package manager"]{Voorbeeldscherm voor de installatie via "Synaptic package manager".}
 \end{figure}
-\subsection{Verschil tussen Dia en MS Visio.~\cite{SiteVergelijking}}
+\newpage
+\subsection{Verschil tussen Dia en MS Visio.}
 \paragraph{•}
 Dia kan je vergelijken met het teken programma MS VISIO. Beide programma’s zijn bedoeld om diagrammen van verschillende aard te tekenen. Het is wel zo dat Dia niet zo uitgebreid is als MS VISIO dus het blijft vrij basic. Toch moet Dia niet onderdoen tegen MS VISIO. Enkele extra’s die je kan met visio en niet met dia is: je netwerk laten scannen zodat visio automatisch een diagram maakt. Dit is niet mogelijk in Dia. Ook het gebruik van database diagrammen is eenvoudiger in ms visio. Als conclusie kunnen we dus beschouwen dat Dia een goed alternatief is voor het tekenen van diagrammen, maar dat MS Visio iets meer mogelijkheden biedt.
 \newpage
-\subsection{Voor- en nadelen van Dia.~\cite{SiteVoorNadelen}}
-\begin{table}[h!]
+\subsection{Voor- en nadelen van Dia.}
+\begin{table}[h]
 \caption{Voordelen van Dia}
 \centering
 \begin{tabular}{|p{10cm}|} \hline
@@ -80,7 +84,7 @@ Grote keuze aan objecten \\  \hline
 Gratis \\  \hline
 \end{tabular}
 \end{table}
-\begin{table}[h!]
+\begin{table}[h]
 \caption{Nadelen van Dia}
 \centering
 \begin{tabular}{|p{10cm}|} \hline
@@ -94,14 +98,17 @@ Niet zo uitgebreid \\  \hline
 \appendix
 \renewcommand*{\appendixname}{Bijlage}
 \chapter{Subversiebeheersysteem\index{Subversiebeheersysteem}}
-Voor het subversie systeem beheer heb ik de handleiding gevolgd op de website ~\cite{SiteGit}.
+\paragraph{•}
+Voor het subversie systeem beheer heb ik de handleiding gevolgd op de website.
 \section{Installatie Git}
+\paragraph{•}
 We gaan eerste git\index{git} installeren op ons systeem.
 In de terminal:
 \begin{lstlisting}
 sudo apt-get install git-core git-gui git-doc
 \end{lstlisting}
 \section{SSH Key aanmaken}
+\paragraph{•}
 Hierna gaan we een sshkey aanmaken voor de veiligheid.
 in de treminal:
 \begin{lstlisting}
@@ -109,19 +116,20 @@ ssh-keygen -t rsa -C"jouw email-adres"
 \end{lstlisting}
 Hierna wordt er gevraagd waar je de SSH key wilt opslaan, druk gewoon op "enter". En vul een wachtwoord in als dit gevraagd wordt.
 als dit goed gegaan is krijg je het scherm te zien met de bevestiging van de aanmaak van de key. zie \ref{AfbGitSsh}
-\begin{figure}[h!]
+\begin{figure}[h]
 \centering
 \includegraphics [width=4in] {AfbGitSsh.png}  
 \caption [Succesvol SSH key aangemaakt]{Hier zie je het resultaat na aanmaak van de SSH Key.}
 \label{AfbGitSsh}
 \end{figure} 
 Nu gaan we de SSH key nog toevoegen aan ons profiel.Zie afbeelding \ref{AfbGitSshProfiel}
-\begin{figure}[h!]
+\begin{figure}[h]
 \centering
 \includegraphics [width=4in] {AfbGitSshProfiel.png}  
 \caption [Toevoegpagina voor SSH key op online profiel]{Hier zie je de pagina waar je de SSH key moet toevoegen.}
 \label{AfbGitSshProfiel}
 \end{figure} 
+\newpage
 Nu kunnen we gaan testen of de key juist is aangemaakt.
 In de terminal:
 \begin{lstlisting}
@@ -130,6 +138,7 @@ yes
 \end{lstlisting}
 Als alles goed is zie je dan een korte tekst met de verwelkoming van u als gebruiker.
 \section{Repository aanmaken en bestanden toevoegen}
+\paragraph{•}
 Voor de repository\index{repository} aan te maken ga je naar je profiel op de website van GitHub\index{GitHub}. Hier klikken we op 'New Repository", dan vul je een naam in in dit geval "ProjectDiaLinux" en de repository is aangemaakt.
 Om bestanden toe te voegen in de repository is het nodig dat we de repository ook lokaal op de pc aanmaken. Dit doen we door onderstaande stappen in de Terminal\index{Terminal}:
 \begin{lstlisting}
@@ -151,17 +160,47 @@ git commit -m 'commentaar bij versie'
 git push master origin
 \end{lstlisting}
 Nu kan je online bij je profiel zien dat er een bestand in de repository zit. Indien je andere bestanden wil toevoegen dien je eerst het bestand in de lokale map te plaatsen en dan de bovenstaande regels code opnieuw uit te voeren.
-Voor eventuele problemen raadpleeg de website ~\cite{SiteGit}.
+Voor eventuele problemen raadpleeg de website.
 \newpage
 \renewcommand{\appendixname}{Bijlage}
-\chapter{Mail configureren onder Ubuntu.}
+\chapter{Mail-server configureren onder Ubuntu.}
+Voor de mail-server te configureren gaan we gebruik maken van mutt. Onderstaand stappenplan gaat je helpen bij het verzenden van een email via de terminal.
+\section{Mutt installeren.}
+\paragraph{•}
+Om mutt te installeren gaan we het volgende in de terminal uitvoeren:
+\begin{lstlisting}
+sudo apt-get install mutt
+\end{lstlisting}
+Hierna gaan we onze .muttrc file aanpassen naar de instellingen van jou emailaccount.
+In terminal:
+\begin{lstlisting}
+gedit .muttrc
+\end{lstlisting}
+Nu opent er een scherm waar je de volgende regels toevoegd.
+\begin{lstlisting}
+set from = "jouwemail@gmail.com"
+set realname = "jouwusername"
+set imap_user = "jouwusername@gmail.com"
+set imap_pass = "jouwpassword"
+set smtp_url = "smtp://jouwusername@smtp.gmail.com:587/"
+set smtp_pass ="jouwpassword"
+\end{lstlisting}
+Nu staat je mutt ingesteld en kan je via de terminal een email versturen.
+In terminal:
+\begin{lstlisting}
+echo "jouw bericht in tekst" | mutt -s "jouwonderwerp" jonas_tielens@hotmail.com
+\end{lstlisting}
+Nu kan je door bovenstaande gegevens aan te passen een email sturen naar wie je wilt via jouw gmail-account.
 \newpage
 \renewcommand{\appendixname}{Bijlage}
 \chapter{Bashscript}
+\begin{lstlisting}
+\end{lstlisting}
 \newpage
 \listoffigures
 \listoftables
 \printindex
-\bibliography{bibProjectDiaLinux} 
+\bibliography{bibProjectDiaLinux.bib} 
 \bibliographystyle{unsrt}
+\nocite{SiteGit,SiteMutt,SiteMutt2,SiteGit,SiteVoorNadelen,SiteVergelijking,SiteWat,SiteInstall}
 \end{document}
