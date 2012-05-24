@@ -1,4 +1,4 @@
-\documentclass[11pt]{report}
+\documentclass[A4Paper,11pt]{report}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{cite}
@@ -59,11 +59,11 @@ Dia is een software programma waarmee je diagrammen kan tekenen. Het is te verge
 \newpage
 \subsection{Hoe te installeren?}
 \paragraph{•}
-Dia kan je installeren doormiddel van het software center in Ubuntu\index{Ubuntu} of bijvoorbeeld "Synaptics package manager". Ook kan je het manueel downloaden op de volgende website van dia-installer. 
+Dia kan je installeren doormiddel van het software center in Ubuntu\index{Ubuntu} of bijvoorbeeld ''Synaptics package manager´´. Ook kan je het manueel downloaden op de volgende website van dia-installer. 
 \begin{figure}[h!]
 \centering
 \includegraphics [width=4in] {InstallDia.png}  
-\caption [Installatie Dia via "Synaptic package manager"]{Voorbeeldscherm voor de installatie via "Synaptic package manager".}
+\caption [Installatie Dia via ''Synaptic package manager´´]{Voorbeeldscherm voor de installatie via ''Synaptic package manager´´.}
 \end{figure}
 \newpage
 \subsection{Verschil tussen Dia en MS Visio.}
@@ -193,11 +193,43 @@ Nu kan je door bovenstaande gegevens aan te passen een email sturen naar wie je 
 \newpage
 \renewcommand{\appendixname}{Bijlage}
 \chapter{Bashscript}
+\begin{lstlisting}
+#!/bin/bash
+#inlezen van de gegevens.
+echo "Voer een aanspreking in"
+read Aanspr
+echo "Voer je voornaam in"
+read Vnaam
+echo "Voer je achternaam in"
+read Anaam
+echo "Voer je email in"
+read EMAIL
+
+#Spaties uit voor en achternaam doen voor de bestandsnaam.
+voorachter="$Vnaam $Anaam"
+bestandsnaam=`echo "$voorachter" | sed 's/ //g'`
+#kopieren van de .tex file met de aangepaste bestandsnaam
+cp ProjectDiaLinux.tex $bestandsnaam.tex
+#wijzig author in bestand ( zoeken op de naam )
+sed -i -E 's/\Jonas Tielens/\ '$Vnaam' '$Anaam'/g' /home/jonastielens/ProjectDiaLinux/$bestandsnaam.tex
+
+#builden van .pdf in latex
+pdflatex $bestandsnaam
+bibtex $bestandsnaam
+makeindex $bestandsnaam
+pdflatex $bestandsnaam
+pdflatex $bestandsnaam
+
+# Email bericht versturen.
+SUBJECT="Opdracht1.5bashscript"
+EMAILMESSAGE="$Aanspr $Vnaam $Anaam \nIn de bijlage kan u het PDF-bestand vinden van mijn project."
+echo -e $EMAILMESSAGE | mutt -s $SUBJECT -a /home/jonastielens/ProjectDiaLinux/$bestandsnaam.pdf -- $EMAIL 
+\end{lstlisting}
 \newpage
 \listoffigures
 \listoftables
 \printindex
 \bibliography{bibProjectDiaLinux.bib} 
-\bibliographystyle{unsrt}
+\bibliographystyle{plain}
 \nocite{SiteGit,SiteMutt,SiteMutt2,SiteGit,SiteVoorNadelen,SiteVergelijking,SiteWat,SiteInstall}
 \end{document}
